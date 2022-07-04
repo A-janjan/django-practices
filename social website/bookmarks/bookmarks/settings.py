@@ -123,5 +123,5 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
 ]
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '914851621412-6pu9kh8ebuv91qo8d22u7qserpl1i30t.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'oauth-key'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'oauth-secret'
