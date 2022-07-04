@@ -1,4 +1,5 @@
 import os
+from telnetlib import AUTHENTICATION
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -10,7 +11,7 @@ SECRET_KEY = 'qxrk^$z9ek^+v-h&-q!--f*@dh^!9u3%wnwc=8nnk#y2(bj88q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -23,6 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -113,3 +116,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.google.GoogleOAuth2',
+]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '914851621412-6pu9kh8ebuv91qo8d22u7qserpl1i30t.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
