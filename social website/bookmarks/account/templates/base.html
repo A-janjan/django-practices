@@ -14,10 +14,10 @@
         <a href="{% url "dashboard" %}">My dashboard</a>
       </li>
       <li {% if section == "images" %}class="selected"{% endif %}>
-        <a href="{% url 'images:list' %}">Images</a>
+        <a href="{% url "images:list" %}">Images</a>
       </li>
       <li {% if section == "people" %}class="selected"{% endif %}>
-        <a href="#">People</a>
+        <a href="{% url "user_list" %}">People</a>
       </li>
     </ul>
   {% endif %}
@@ -51,7 +51,7 @@
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
   <script>
     var csrftoken = Cookies.get('csrftoken');
-    function csrfSafeMethod(method) {
+     function csrfSafeMethod(method) {
       // these HTTP methods do not require CSRF protection
       return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
     }
