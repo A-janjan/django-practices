@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "payment.apps.PaymentConfig",
     "coupons.apps.CouponsConfig",
     "rosetta",
+    "parler",
+    "localflavor",
 ]
 
 MIDDLEWARE = [
@@ -128,7 +130,7 @@ LOCALE_PATHS = (
 TIME_ZONE = "UTC"
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
 
@@ -163,3 +165,15 @@ BRAINTREE_CONF = braintree.Configuration(
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code':'en'},
+        {'code':'fa'},
+        {'code':'es'},
+    ),
+    'default':{
+        'fallback':'en',
+        'hide_untranslated': False,
+    }
+}
